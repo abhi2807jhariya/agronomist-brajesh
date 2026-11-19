@@ -36,7 +36,7 @@ My professional journey brings together rigorous agronomic science and aggressiv
 ├── about.html                           # Story, Education, Awards & Principles
 ├── experience.html                      # Vertical Career Timeline & Milestones
 ├── contact.html                         # Contact & Web3Forms AJAX Inquiry Form
-├── pages/
+├── blog/
 │   ├── farmer-meetings.html             # Field Work: Farmer Meetings & Chaupal
 │   ├── product-demonstrations.html      # Field Work: Product Demonstrations & Trials
 │   └── dealer-networks.html             # Field Work: Building Dealer Networks

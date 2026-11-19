@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', setActiveNavigation);
 document.querySelectorAll('[data-include], .site-header, .site-footer').forEach(async (element) => {
   if (element.children.length > 0) return;
   try {
-    const isInsidePages = window.location.pathname.toLowerCase().includes('/pages/');
+    const isInsidePages = window.location.pathname.toLowerCase().includes('/blog/');
     const basePath = isInsidePages ? '../' : './';
     const defaultPath = element.classList.contains('site-header') ? basePath + 'includes/header.html' : basePath + 'includes/footer.html';
     const includePath = element.dataset.include || defaultPath;
@@ -88,7 +88,7 @@ document.querySelectorAll('[data-include], .site-header, .site-footer').forEach(
                  .replace(/href="about\.html/g, 'href="../about.html')
                  .replace(/href="experience\.html/g, 'href="../experience.html')
                  .replace(/href="contact\.html/g, 'href="../contact.html')
-                 .replace(/href="pages\//g, 'href="')
+                 .replace(/href="blog\//g, 'href="')
                  .replace(/src="assets\//g, 'src="../assets/')
                  .replace(/href="assets\//g, 'href="../assets/');
     }
