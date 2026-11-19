@@ -110,6 +110,12 @@ body { margin: 0; background: var(--deep); color: var(--ink); font-family: Arial
   transform: rotate(90deg);
 }
 
+/* Universal Breadcrumbs */
+.breadcrumbs { font-size: .85rem; color: #e6d79a; margin-bottom: 6px; }
+.breadcrumbs a { color: #e6d79a; text-decoration: none; transition: color .2s ease; }
+.breadcrumbs a:hover { color: #fff; text-decoration: underline; }
+.breadcrumbs span { color: rgba(255, 255, 255, 0.9); font-weight: 600; }
+
 @media (max-width: 991px) {
   .site-shell { margin: 0; }
   .navbar-collapse { padding: 12px 0 18px; }
