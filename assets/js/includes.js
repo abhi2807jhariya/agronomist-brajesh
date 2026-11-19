@@ -74,11 +74,25 @@ window.addEventListener('hashchange', setActiveNavigation);
 document.addEventListener('DOMContentLoaded', setActiveNavigation);
 
 document.querySelectorAll('[data-include], .site-header, .site-footer').forEach(async (element) => {
+  if (element.children.length > 0) return;
   try {
-    const includePath = element.dataset.include || (element.classList.contains('site-header') ? '/includes/header.html' : '/includes/footer.html');
+    const isInsidePages = window.location.pathname.toLowerCase().includes('/pages/');
+    const basePath = isInsidePages ? '../' : './';
+    const defaultPath = element.classList.contains('site-header') ? basePath + 'includes/header.html' : basePath + 'includes/footer.html';
+    const includePath = element.dataset.include || defaultPath;
     const response = await fetch(includePath);
     if (!response.ok) throw new Error(`Could not load ${includePath}`);
-    element.outerHTML = await response.text();
+    let html = await response.text();
+    if (isInsidePages) {
+      html = html.replace(/href="index\.html/g, 'href="../index.html')
+                 .replace(/href="about\.html/g, 'href="../about.html')
+                 .replace(/href="experience\.html/g, 'href="../experience.html')
+                 .replace(/href="contact\.html/g, 'href="../contact.html')
+                 .replace(/href="pages\//g, 'href="')
+                 .replace(/src="assets\//g, 'src="../assets/')
+                 .replace(/href="assets\//g, 'href="../assets/');
+    }
+    element.outerHTML = html;
     setActiveNavigation();
     openEmailLinksInNewTab();
   } catch (error) {
