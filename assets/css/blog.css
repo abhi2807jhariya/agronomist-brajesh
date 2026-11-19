@@ -1,0 +1,139 @@
+.blog-page {
+  background: url('../images/paper-texture.png') center/cover;
+  overflow-x: hidden;
+}
+
+.blog-hero {
+  background: linear-gradient(110deg, #063b20, #0b5a2e);
+  color: #fff;
+  padding: 26px 0 34px;
+}
+
+.blog-hero h1 { font-size: clamp(2.2rem, 4vw, 4rem); margin: .35rem 0; font-weight: 700; }
+.blog-hero p { font-size: 1.15rem; margin: 0; }
+.breadcrumbs { font-size: .85rem; color: #e6d79a; margin-bottom: 6px; }
+.breadcrumbs a { color: #e6d79a; text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; color: inherit; }
+.blog-wrap { max-width: 1250px; margin: 0 auto; padding: 22px 32px 90px; }
+.blog-content { padding-top: 34px; }
+
+.blog-hero-image {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  box-shadow: 0 12px 28px #073b2020;
+}
+
+.caption { text-align: center; font-size: .8rem; font-style: italic; margin: 9px 0 26px; color: #536056; }
+.blog-content h2, .blog-content h3 { color: var(--forest); font-weight: 700; }
+.blog-content h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+.blog-content h3 { font-size: 1.25rem; }
+.blog-content p { font-size: 1rem; line-height: 1.6; }
+
+.blog-content > .row:first-of-type {
+  background: #fffdf5;
+  border: 1px solid #e1dccb;
+  border-radius: 18px;
+  padding: 34px;
+  box-shadow: 0 8px 20px #073b2010;
+  margin-bottom: 52px;
+}
+
+.glance-card { background: #e8ead2; border-radius: 14px; padding: 22px; height: 100%; }
+.glance-row { display: grid; grid-template-columns: 35px 1fr 1.2fr; gap: 8px; padding: 10px 0; border-bottom: 1px solid #b9bea2; }
+.glance-icon { width: 26px; height: 26px; object-fit: contain; }
+.glance-row:last-child { border-bottom: 0; }
+
+.section-title { text-align: center; margin: 0 0 24px; padding-top: 42px; border-top: 1px solid #d9d4c3; }
+.section-title h2 { display: inline-block; margin: 0 18px; }
+.section-title:before, .section-title:after { content: ''; display: inline-block; vertical-align: middle; width: 110px; border-top: 2px solid var(--gold); }
+
+.section-title + .row {
+  background: rgba(255, 253, 245, .82);
+  border: 1px solid #e1dccb;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 8px 20px #073b2010;
+  margin-bottom: 44px !important;
+}
+
+.topic-card { text-align: center; padding: 18px 28px; border-right: 1px solid var(--line); height: 100%; }
+.topic-card:last-child { border-right: 0; }
+.topic-icon { font-size: 2.8rem; color: #b17d0b; margin-bottom: 10px; }
+.topic-card p { margin-bottom: 0; }
+
+.approach-card { height: 100%; min-height: 175px; border: 1px solid #ded9c9; border-radius: 14px; padding: 20px; background: #fbfaf2; }
+.approach-number { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #c78a10; color: #fff; font-weight: 700; margin-right: 8px; }
+.approach-card strong { font-size: 1.1rem; }
+
+.glimpse-img { height: 245px; width: 100%; object-fit: cover; border-radius: 12px; }
+.glimpse-card { height: 100%; overflow: hidden; border: 1px solid #ded9c9; border-radius: 14px; background: #fbfaf2; }
+.glimpse-copy { padding: 16px 18px 18px; }
+.glimpse-copy h3 { font-size: 1.12rem; margin-bottom: 6px; }
+.glimpse-copy p { font-size: .92rem; margin-bottom: 0; }
+.related-card { display: flex; align-items: center; gap: 18px; border: 1px solid #ded9c9; border-radius: 14px; padding: 14px; background: #fbfaf2; height: 100%; }
+.related-card img { width: 200px; height: 120px; object-fit: cover; border-radius: 9px; flex: 0 0 auto; }
+.related-card h3 { font-size: 1.1rem; margin-bottom: 5px; }
+.related-card p { font-size: .9rem; margin-bottom: 6px; }
+.related-card a { color: #a16d05; font-weight: 700; text-decoration: none; }
+
+/* Home-page style sections: spacious, separated, without small card boxes. */
+.blog-content > .row:first-of-type {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 38px 0 58px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #d9d4c3;
+}
+.section-title { margin-top: 0; padding-top: 58px; }
+.section-title + .row {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 58px;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #d9d4c3;
+}
+.topic-card { padding: 18px 34px; }
+.approach-card { min-height: 0; border: 0; border-right: 1px solid var(--line); border-radius: 0; padding: 18px 24px; background: transparent; }
+.approach-card:last-child { border-right: 0; }
+.glimpse-card { border: 0; border-radius: 0; background: transparent; }
+.glimpse-copy { padding: 16px 4px 0; }
+.related-card { border: 0; border-radius: 0; padding: 0; background: transparent; }
+.blog-content > .section-title:nth-of-type(2) + .row,
+.blog-content > .section-title:nth-of-type(6) + .row {
+  background: url('../images/paper-texture.png') center/cover;
+  width: calc(100% + 64px);
+  margin-left: -32px;
+  border-radius: 0;
+  padding-left: max(16px, calc((100vw - 1250px) / 2 + 32px)) !important;
+  padding-right: max(16px, calc((100vw - 1250px) / 2 + 32px)) !important;
+  background-repeat: repeat;
+}
+.related-card { display: flex; align-items: center; gap: 18px; border: 1px solid #ded9c9; border-radius: 14px; padding: 14px; background: #fbfaf2; height: 100%; }
+
+@media (max-width: 767px) {
+  .approach-card { border-right: 0; border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .approach-card:last-child { border-bottom: 0; }
+  .topic-card { padding-left: 8px; padding-right: 8px; }
+}
+
+@media (max-width: 767px) {
+  .blog-wrap { padding-left: 16px; padding-right: 16px; }
+  .blog-hero-image { height: 260px; }
+  .blog-content > .row:first-of-type { padding: 22px; }
+  .section-title:before, .section-title:after { width: 32px; }
+  .section-title h2 { margin: 0 8px; }
+  .topic-card { border-right: 0; border-bottom: 1px solid var(--line); padding-bottom: 22px; }
+  .topic-card:last-child { border-bottom: 0; }
+  .glimpse-img { height: 220px; }
+  .related-card { display: block; }
+  .related-card img { width: 100%; height: 170px; margin-bottom: 12px; }
+  .blog-content > .section-title:nth-of-type(2) + .row,
+  .blog-content > .section-title:nth-of-type(6) + .row { width: calc(100% + 32px); margin-left: -16px; }
+}
