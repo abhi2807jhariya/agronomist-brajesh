@@ -125,6 +125,34 @@ body { margin: 0; background: var(--deep); color: var(--ink); font-family: Arial
     width: fit-content;
     padding: 6px 0;
   }
+  .navbar-nav .nav-link.dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .navbar-nav .dropdown-menu {
+    border: 1px solid #ded9c9;
+    background: #fbfaf2;
+    border-radius: 12px;
+    margin: 4px 0 10px 0;
+    padding: 6px 0;
+    box-shadow: 0 4px 16px rgba(7, 59, 32, 0.08);
+  }
+  .navbar-nav .dropdown-item {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    color: var(--forest);
+    font-weight: 500;
+  }
+  .navbar-nav .dropdown-item:hover,
+  .navbar-nav .dropdown-item:focus {
+    background: #e8ead2;
+    color: var(--forest);
+  }
+  .navbar-nav .dropdown-item.active {
+    background: var(--forest);
+    color: #fff;
+  }
   .navbar-nav .btn-dark-green {
     margin-top: 14px;
     display: inline-block;

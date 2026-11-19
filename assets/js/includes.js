@@ -49,17 +49,43 @@ function setActiveNavigation() {
     document.querySelector('.site-header .dropdown-menu a[href*="dealer-networks.html"]')?.classList.add('active');
   }
 
+  // Initialize Bootstrap Dropdown instances explicitly if bootstrap is loaded
+  if (typeof bootstrap !== 'undefined' && bootstrap.Dropdown) {
+    document.querySelectorAll('.site-header [data-bs-toggle="dropdown"]').forEach((el) => {
+      bootstrap.Dropdown.getOrCreateInstance(el);
+    });
+  }
+
   navLinks.forEach((link) => {
     if (!link.dataset.navBound) {
       link.dataset.navBound = 'true';
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        // If it's a dropdown toggle (e.g. 'Blog'), do NOT close the mobile menu!
+        if (link.classList.contains('dropdown-toggle')) {
+          return;
+        }
+
         const href = link.getAttribute('href') || '';
-        if (!link.classList.contains('dropdown-toggle') && (href.startsWith('#') || href.includes('index.html#'))) {
+        if (href.startsWith('#') || href.includes('index.html#')) {
           navLinks.forEach((l) => l.classList.remove('active'));
           link.classList.add('active');
         }
 
-        // Close mobile menu on click if open
+        // Close mobile menu on click if open for regular links
+        const navCollapse = document.getElementById('mainNavigation');
+        if (navCollapse && navCollapse.classList.contains('show')) {
+          const toggler = document.querySelector('.navbar-toggler');
+          toggler?.click();
+        }
+      });
+    }
+  });
+
+  // Close mobile menu when clicking any dropdown item inside the menu
+  document.querySelectorAll('.site-header .dropdown-menu .dropdown-item').forEach((item) => {
+    if (!item.dataset.itemCloseBound) {
+      item.dataset.itemCloseBound = 'true';
+      item.addEventListener('click', () => {
         const navCollapse = document.getElementById('mainNavigation');
         if (navCollapse && navCollapse.classList.contains('show')) {
           const toggler = document.querySelector('.navbar-toggler');
